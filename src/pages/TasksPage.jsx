@@ -13,7 +13,7 @@ function TasksPage() {
       getTasks();
       const token = Cookies.get('token');
       console.log('entre tasks');
-      console.log(token);
+      console.log('token',token);
     }, [ ]);
     
     //si esta vacio porque no tengo tareas mandara esto
