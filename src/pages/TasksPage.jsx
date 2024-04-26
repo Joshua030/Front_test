@@ -12,6 +12,7 @@ function TasksPage() {
     useEffect(() => {
       getTasks();
       const token = Cookies.get('token');
+      console.log('entre tasks');
       console.log(token);
     }, [ ]);
     
