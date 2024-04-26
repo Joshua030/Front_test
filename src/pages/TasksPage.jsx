@@ -11,7 +11,7 @@ function TasksPage() {
     //si tiene tareas las mostrara con el getTask()
     useEffect(() => {
       getTasks();
-      const token = Cookies.get('token');
+      const token = Cookies.get();
       console.log('entre tasks');
       console.log('token',token);
     }, [ ]);
