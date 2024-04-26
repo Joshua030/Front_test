@@ -93,20 +93,21 @@ export const AuthProvider = ({ children }) => {
         //funcion asincrona para checkear el login
         async function  checkLogin() {
         
-            const cookies = Cookies.get()
+            // const cookies = Cookies.get()
     
-            // primero comprueba si no hay token en las cookies
-            if(!cookies.token){
-                //si no hay le digo que la autenticacion esta en falso
-                setIsAuthenticated(false)
-                //no esta cargando
-                setLoading(false)
-                //usuario esta en null
-                return setUser(null)  
-            }
+            // // primero comprueba si no hay token en las cookies
+            // if(!cookies.token){
+            //     //si no hay le digo que la autenticacion esta en falso
+            //     setIsAuthenticated(false)
+            //     //no esta cargando
+            //     setLoading(false)
+            //     //usuario esta en null
+            //     return setUser(null)  
+            // }
             try {
                 //si hay un token verificalo enviadolo al backend para que no se pueda introducir manualmente en el navegador
-                const res = await vertyTokenRequet(cookies.token)
+                // const res = await vertyTokenRequet(cookies.token)
+                const res = await vertyTokenRequet();
                 //si no me responde ningun dato o no cuadran ponlo en falso y devuelvelo
                 if (!res.data){
                     //seteo el loading a false para que no se quede cargando
