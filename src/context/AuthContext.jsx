@@ -51,8 +51,6 @@ export const AuthProvider = ({ children }) => {
             //le paso el usuario a la peticion de login
             const res = await loginRequest(user)
             //le digo que si esta autenticado
-            console.log('res',res);
-            console.log('entre res');
             setIsAuthenticated(true)
             //seteo el usuario con los datos del usuario
             setUser(res.data)
@@ -94,11 +92,9 @@ export const AuthProvider = ({ children }) => {
     useEffect(() => {
         //funcion asincrona para checkear el login
         async function  checkLogin() {
-            console.log('entre');
-            //cojo la cookie y la guardo en una variable
-            console.log('entre effect');
+        
             const cookies = Cookies.get()
-            console.log('cookies',cookies);
+    
             // primero comprueba si no hay token en las cookies
             if(!cookies.token){
                 //si no hay le digo que la autenticacion esta en falso
