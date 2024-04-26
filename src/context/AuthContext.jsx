@@ -94,6 +94,7 @@ export const AuthProvider = ({ children }) => {
         async function  checkLogin() {
             console.log('entre');
             //cojo la cookie y la guardo en una variable
+            console.log('entre effect');
             const cookies = Cookies.get()
             console.log('cookies',cookies);
             // primero comprueba si no hay token en las cookies
