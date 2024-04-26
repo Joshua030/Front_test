@@ -94,6 +94,7 @@ export const AuthProvider = ({ children }) => {
         async function  checkLogin() {
             //cojo la cookie y la guardo en una variable
             const cookies = Cookies.get()
+            console.log(cookies);
             // primero comprueba si no hay token en las cookies
             if(!cookies.token){
                 //si no hay le digo que la autenticacion esta en falso
