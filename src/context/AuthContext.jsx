@@ -51,6 +51,7 @@ export const AuthProvider = ({ children }) => {
             //le paso el usuario a la peticion de login
             const res = await loginRequest(user)
             //le digo que si esta autenticado
+            console.log('res',res);
             setIsAuthenticated(true)
             //seteo el usuario con los datos del usuario
             setUser(res.data)
