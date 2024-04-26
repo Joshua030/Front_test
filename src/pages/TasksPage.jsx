@@ -3,6 +3,7 @@ import { useEffect } from "react";
 import { useTasks } from "../context/TasksContext";
 import TaskCard from "../components/TaskCard";
 import  imagencole  from "../assets/img/imagencole.png";
+import Cookies from 'js-cookie';
 //funcion para la pagina de tareas
 function TasksPage() {
     //importo de useTask el getTask y la tareas
@@ -10,6 +11,8 @@ function TasksPage() {
     //si tiene tareas las mostrara con el getTask()
     useEffect(() => {
       getTasks();
+      const token = Cookies.get('token');
+      console.log(token);
     }, [ ]);
     
     //si esta vacio porque no tengo tareas mandara esto
