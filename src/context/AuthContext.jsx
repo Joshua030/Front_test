@@ -1,7 +1,7 @@
 //importo propiedades desde react
 import { createContext, useState, useContext, useEffect } from "react";
 //importo las funciones desde api/auth.js
-import { registerRequest, loginRequest, vertyTokenRequet } from "../api/auth.js";
+import { registerRequest, loginRequest, vertyTokenRequet, logoutRequest } from "../api/auth.js";
 //importo cookies desde js-cookie
 import Cookies from "js-cookie";
 //creo contexto y lo guardo en la variable
@@ -65,10 +65,12 @@ export const AuthProvider = ({ children }) => {
     }
 
     //creo funcion asincrona para deslogearme 
-    const logout =  () => {
+    const logout =  async () => {
         //elimino el token
         Cookies.remove("token")
         //le digo que no esta autenticado
+        const res = await logoutRequest()
+        console.log(res);
         setIsAuthenticated(false)
         //seteo el usuario a null
         setUser(null)
